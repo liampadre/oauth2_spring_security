@@ -49,9 +49,9 @@ public class UserController {
                 .body(userEntityService.getUsers());
     }
 
-    @PreAuthorize("isAuthenticated()")
     @GetMapping("/me")
     public ResponseEntity<UserResponse> getMe(@AuthenticationPrincipal UserEntity userEntity) {
+        // Test with three legs token, with two legs token throws an exception
         return ResponseEntity.status(HttpStatus.OK)
                 .body(UserConverter.convertUserEntityToUserResponse(userEntity));
     }

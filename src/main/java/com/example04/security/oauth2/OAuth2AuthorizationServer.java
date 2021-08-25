@@ -74,7 +74,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
                         IMPLICIT_GRANT_TYPE,
                         CODE_GRANT_TYPE,
                         CLIENT_CREDENTIALS)
-                .authorities("READ_ONLY_CLIENT")
+                .authorities("READ_ONLY_CLIENT", "ROLE_ADMIN")
                 .scopes("read","write")
                 .resourceIds("oauth2-resource")
                 .redirectUris(redirectUri)
